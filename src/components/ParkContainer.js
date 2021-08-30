@@ -1,26 +1,19 @@
 import React, { Component } from 'react';
-import Park from './Park'
 import { connect } from 'react-redux'
+import {fetchParks} from '../actions/ParksActions'
+import ParksList from './ParksList'
 
 class ParkContainer extends Component {
 
     componentDidMount(){
-        console.log("BEFORE:")
-        // localhost 3000 is not working but is in the walkthrough
-        fetch('http://localhost:3000/parks')
-        .then(response => response.json())
-        .then(data => this.setState({
-            parks: data
-        }))
-        console.log("AFTER:")
+        this.props.fetchParks()
     }
     
     render() {
         return (
             <div>
-                <h1>This is the parkscontainer</h1>
-                {/* renders all of the parks on the page */}
-                {this.props.parks.map(p => <Park {...p} key={p.id} />)}
+                <h1>Welcome to NationalParksUSA</h1>
+                <ParksList />
 
 
             </div>
@@ -29,10 +22,4 @@ class ParkContainer extends Component {
 
 }
 
-const mapStateToProps = (state) => {
-    return {
-        parks: state
-    }
-}
-
-export default connect(mapStateToProps)(ParkContainer);
+export default connect(null, {fetchParks})(ParkContainer);

@@ -3,7 +3,9 @@ import React from 'react';
 function Park(props) {
     return (
         <div>
-            <p>{props.fullName}</p>
+            <h2>{props.fullName}</h2>
+            <p>{props.description}</p>
+            <img src={props.images[0].url} alt={props.images[0].title} max-width={100} height={600} />
         </div>
     )
 }
