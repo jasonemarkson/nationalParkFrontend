@@ -1,27 +1,38 @@
 import React, { Component } from 'react';
-
-const API_KEY = '&api_key=a0pycXYjNhLyJ0vQ3vQI9UfbjXN0Ii7Gf8aUzM74'
-const URL = `https://developer.nps.gov/api/v1/parks?stateCode=`
+import Park from './Park'
+import { connect } from 'react-redux'
 
 class ParkContainer extends Component {
 
-    fetchNationalParks = (stateCode) => {
-        fetch(`${URL}+${stateCode}+${API_KEY}`)
+    componentDidMount(){
+        console.log("BEFORE:")
+        // localhost 3000 is not working but is in the walkthrough
+        fetch('http://localhost:3000/parks')
         .then(response => response.json())
-        .then(parks => {debugger})
+        .then(data => this.setState({
+            parks: data
+        }))
+        console.log("AFTER:")
     }
     
     render() {
         return (
             <div>
                 <h1>This is the parkscontainer</h1>
-                {/* renders all of the park cards on the page */}
+                {/* renders all of the parks on the page */}
+                {this.props.parks.map(p => <Park {...p} key={p.id} />)}
+
 
             </div>
         );
     }
 
-    fetchNationalParks
 }
 
-export default ParkContainer;
+const mapStateToProps = (state) => {
+    return {
+        parks: state
+    }
+}
+
+export default connect(mapStateToProps)(ParkContainer);
