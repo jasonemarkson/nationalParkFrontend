@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 // thunk allows you to create functions with dispatching 
@@ -11,6 +10,7 @@ import App from './App'
 import { rootReducer } from './reducers/RootReducer'
 
 const store = createStore(
+  // 1. reducer 2. dev tools
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk))
 )

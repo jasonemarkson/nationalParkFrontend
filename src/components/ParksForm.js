@@ -7,23 +7,26 @@ class ParksForm extends Component {
     }
 
     handleChange = (event) => {
+        const { name, value } = event.target
+        
         this.setState({
-            states: event.target.value
+            [name]: value
         })
     }
     
     handleSubmit = (event) => {
         event.preventDefault()
-        // Want this form to be able to find parks by state code
+        // Want this form to be able to find parks by state code; unable to grab all of the parks from state to filter by the search value; maybe I need to move this into my ParksList where I have access to the parks
         
+        // let searchStateCode = event.target.elements["states"].value
     }
 
     render() {
-        console.log(this.state.states)
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    Find Parks by State Code: <input type="text" onChange={this.handleChange} value={this.state.states}>
+                    <label>Find Parks by State Code: </label> 
+                    <input type="text" onChange={this.handleChange} value={this.state.states} name="states">
 
                     </input>
                     <input type="submit"></input>
