@@ -5,5 +5,4 @@ export const fetchParks = () => {
         .then(parks=> dispatch({type: 'FETCH_PARKS', payload: parks})
         )
     }
-
 } 

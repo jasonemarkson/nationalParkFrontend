@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {fetchParks} from '../actions/ParksActions'
 import ParksList from './ParksList'
+import ParksForm from './ParksForm'
 
 class ParkContainer extends Component {
 
@@ -13,6 +14,7 @@ class ParkContainer extends Component {
         return (
             <div>
                 <h1>Welcome to NationalParksUSA</h1>
+                <ParksForm />
                 <ParksList />
 
 

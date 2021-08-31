@@ -4,7 +4,6 @@ import Park from './Park'
 
 
 const ParksList= ({ parks }) => {  
-console.log(parks)
     return (
         <div>
             {parks.map((park, key) => <Park key={park.id} {...park} />)}
