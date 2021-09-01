@@ -1,13 +1,22 @@
-import ParkContainer from './containers/ParkContainer';
-import WishListContainer from './containers/WishListContainer'
+import React, { Component } from 'react'
+import Router from './components/Router'
+import Navbar from './components/Navbar'
 
-function App() {
-  return (
-    <div className="App">
-      <ParkContainer />
-      <WishListContainer />
-    </div>
-  );
+class App extends Component {
+  state = {
+    saved: []
+  }
+  
+
+  render () {
+
+    return (
+      <div className="App">
+        <Navbar />
+        <Router />
+      </div>
+    );
+  }
 }
 
 export default App;
