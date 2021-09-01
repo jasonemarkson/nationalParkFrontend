@@ -8,7 +8,8 @@ class ParksList extends Component {
     // 1) we changed this component to a class component & then we added state to be able to retrieve all of the park objects in an array
     state = {
         parks: [],
-        states: ''
+        states: '',
+        saved: []
     }
 
     handleChange = (event) => {
@@ -41,8 +42,12 @@ class ParksList extends Component {
 }
 
 const mapStateToProps = state => {
-    return { parks: state.parks}
+    return { 
+        parks: state.parks, 
+        saved: []
+    }
 }
 
 
 export default connect(mapStateToProps)(ParksList);
+// export default ParksList;

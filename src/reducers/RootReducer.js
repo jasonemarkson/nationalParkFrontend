@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 
 import { parksReducer } from './ParksReducer'
-import { wishlistsReducer } from './WishListsReducer'
+import { savedParksReducer } from './SavedParksReducer'
 
 export const rootReducer = combineReducers({
     parks: parksReducer,
-    wishlist: wishlistsReducer
+    savedparks: savedParksReducer
 })

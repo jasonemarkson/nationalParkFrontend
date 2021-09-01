@@ -10,8 +10,8 @@ function Navbar(props) {
             <Link to='/parks'>
                 <button id="parks">Parks</button>
             </Link>
-            <Link to='/wishlist'>
-                <button id="wishlist">Saved Parks</button>
+            <Link to='/savedparks'>
+                <button id="savedparks">Saved Parks</button>
             </Link>
         </div>
     )

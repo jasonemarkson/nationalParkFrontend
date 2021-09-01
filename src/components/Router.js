@@ -2,15 +2,19 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom'
 
 import ParksContainer from '../containers/ParkContainer'
-import WishListContainer from '../containers/WishListContainer'
+import SavedParksContainer from '../containers/SavedParksContainer'
 import Home from './Home'
 
-const Router = () => {
+const Router = (state) => {
+    state = {
+        saved: []
+    }
+
     return (
         <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/parks' component={ParksContainer} />
-            <Route path='/wishlist' component={WishListContainer} />
+            <Route path='/savedparks' component={SavedParksContainer} />
         </Switch>
     )
 }

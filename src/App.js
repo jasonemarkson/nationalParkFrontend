@@ -3,10 +3,6 @@ import Router from './components/Router'
 import Navbar from './components/Navbar'
 
 class App extends Component {
-  state = {
-    saved: []
-  }
-  
 
   render () {
 

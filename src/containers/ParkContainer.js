@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchParks } from '../actions/ParksActions'
+// import { addToSavedParks } from '../actions/SavedParksActions'
 import ParksList from '../components/ParksList'
 
 class ParkContainer extends Component {
@@ -12,7 +13,7 @@ class ParkContainer extends Component {
     render() {
         return (
             <div>
-                <h1>Welcome to NationalParksUSA</h1>
+                <h1>Explore Across the USA, One Park at a Time</h1>
                 <ParksList />
 
 
@@ -22,4 +23,4 @@ class ParkContainer extends Component {
 
 }
 
-export default connect(null, {fetchParks} )(ParkContainer);
+export default connect(null, {fetchParks})(ParkContainer);
