@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import SavedPark from './SavedPark';
 
 class SavedParksList extends Component {
+
     render() {
         return (
             <div>
@@ -12,4 +14,11 @@ class SavedParksList extends Component {
     }
 }
 
-export default SavedParksList;
+const mapStateToProps = state => {
+    return {
+        savedparks: state.savedReducer.savedParks
+        // need to add a fetch for when the users log in to fetch the data
+    }
+}
+
+export default connect(mapStateToProps)(SavedParksList);

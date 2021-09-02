@@ -50,4 +50,3 @@ const mapStateToProps = state => {
 
 
 export default connect(mapStateToProps)(ParksList);
-// export default ParksList;

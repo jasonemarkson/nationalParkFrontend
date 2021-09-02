@@ -5,5 +5,5 @@ import { savedParksReducer } from './SavedParksReducer'
 
 export const rootReducer = combineReducers({
     parks: parksReducer,
-    savedparks: savedParksReducer
+    savedReducer: savedParksReducer
 })

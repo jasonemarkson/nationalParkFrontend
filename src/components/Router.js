@@ -14,7 +14,7 @@ const Router = (state) => {
         <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/parks' component={ParksContainer} />
-            <Route path='/savedparks' component={SavedParksContainer} />
+            <Route path='/saved_parks' component={SavedParksContainer} />
         </Switch>
     )
 }
