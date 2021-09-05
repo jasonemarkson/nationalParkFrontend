@@ -1,23 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 import SavedPark from './SavedPark';
+import { useSelector } from 'react-redux'
 
-class SavedParksList extends Component {
 
-    render() {
+function SavedParksList(props) {
+
+    const savedparks = useSelector(state => state.savedReducer.savedParks)
+
         return (
             <div>
                 This is where a saved park would go -- create a SavedPark component
-                <SavedPark />
+                {savedparks.map((s, index) => <SavedPark key={index} {...s} /> )}
             </div>
         );
-    }
 }
 
 const mapStateToProps = state => {
     return {
         savedparks: state.savedReducer.savedParks
-        // need to add a fetch for when the users log in to fetch the data
     }
 }
 
