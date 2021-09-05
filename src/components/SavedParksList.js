@@ -11,7 +11,7 @@ function SavedParksList(props) {
         return (
             <div>
                 This is where a saved park would go -- create a SavedPark component
-                {savedparks.map((s, index) => <SavedPark key={index} {...s} /> )}
+                {savedparks.map((s) => <SavedPark key={s.id} {...s} /> )}
             </div>
         );
 }

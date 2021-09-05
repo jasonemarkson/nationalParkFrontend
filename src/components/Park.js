@@ -7,6 +7,7 @@ function Park(props){
     const dispatch = useDispatch()
     
     const handleClick = (props) => {
+        console.log("Added to Saved Parks!")
         dispatch(addToSavedParks(props))
     }
 

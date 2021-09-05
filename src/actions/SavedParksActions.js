@@ -19,7 +19,7 @@ export const addToSavedParks = (park) => ({
      payload: park
  })
 
-// export const deleteFromCart = (artwork) => ({
-//     type: "DELETE_CART",
-//     payload: artwork
+// export const deleteFromSavedParks = (park) => ({
+//     type: "DELETE_FROM_SAVED",
+//     payload: park
 // })
