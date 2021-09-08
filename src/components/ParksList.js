@@ -33,6 +33,13 @@ class ParksList extends Component {
                     <input type="text" onChange={this.handleChange} value={this.state.states} name="states">
 
                     </input>
+
+                {
+                (this.renderParks().length > 1 || this.renderParks().length !== 1)
+                ? <p>Showing {this.renderParks().length} parks</p>
+                : <p>Showing {this.renderParks().length} park</p>
+                }
+                
                 {/* 4) finally we call the method in the render() which returns an array and then we map over that array and create a Park component for each element which will display to our DOM */}
                 {this.renderParks().map((park, key) => <Park key={park.id} {...park} />)}
             </div>

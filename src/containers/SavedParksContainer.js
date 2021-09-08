@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-
+import { fetchSavedParks } from '../actions/SavedParksActions'
 import SavedParksList from '../components/SavedParksList';
 // saved parks by users
 class SavedParksContainer extends Component {
 
-    state = {
-        savedParks: []
+    componentDidMount() {
+        this.props.fetchSavedParks()
     }
 
 
@@ -20,12 +20,6 @@ class SavedParksContainer extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        savedParks: [state.savedparks]
-    }
-}
-
 
 // wasn't able to receive props/state from the store -- needed to connect to store
-export default connect(mapStateToProps)(SavedParksContainer);
+export default connect(null, {fetchSavedParks})(SavedParksContainer);

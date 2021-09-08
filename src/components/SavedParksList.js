@@ -1,25 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import SavedPark from './SavedPark';
-import { useSelector } from 'react-redux'
+import SavedPark from './SavedPark'
 
+class SavedParksList extends Component {
 
-function SavedParksList(props) {
+    state = {
+        savedParks: []
+    }
 
-    const savedparks = useSelector(state => state.savedReducer.savedParks)
+    renderSavedParks = () => {
+        return this.props.savedParks.map(s => s.park)
+    }
 
+    render() {
         return (
             <div>
-                This is where a saved park would go -- create a SavedPark component
-                {savedparks.map((s) => <SavedPark key={s.id} {...s} /> )}
+                <p>SavedParksList is here</p>
+                {this.renderSavedParks().map((s) => <SavedPark {...s} />)}
             </div>
         );
+    }
 }
 
 const mapStateToProps = state => {
     return {
-        savedparks: state.savedReducer.savedParks
+        savedParks: state.savedReducer
+        // gives us an array of saved_parks but still need to do c.park to access the Park
     }
 }
+
 
 export default connect(mapStateToProps)(SavedParksList);
