@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'
-import { addAttractionsToSavedParks } from '../actions/SavedParksActions'
+import { fetchSavedParks } from '../actions/SavedParksActions'
+import Attraction from './Attraction'
 
 function SavedPark(props) {
     const [attraction, setAttraction] = useState('')
@@ -13,7 +14,9 @@ function SavedPark(props) {
     }
 
     const handleSubmit = (event) => {
+        // submit event keeps refreshing before I can see the update
         event.preventDefault()
+        setAttraction('')
 
         fetch(`http://localhost:3000/saved_parks/${props.savedParkId}`, {
             method: 'PATCH', 
@@ -24,16 +27,28 @@ function SavedPark(props) {
         })
         .then(response => response.json())
         .then(data => 
-            dispatch(addAttractionsToSavedParks(data.attractions))
+            dispatch(fetchSavedParks())
         )
+
     }
-    // {debugger}
+
+    const handleClick = (event) => {
+        fetch(`http://localhost:3000/saved_parks/${props.savedParkId}`, {
+            method: 'DELETE'
+        })
+        .then(data => 
+            dispatch(fetchSavedParks())
+        )
+        console.log("deleted")
+    }
+
     return (
         <div>
             <h2>{props.fullName}</h2>
             <p>State(s): {props.states}</p>
             <p>{props.description}</p>
             <img src={props.images[0].url} alt={props.images[0].title} max-width={100} height={400} /><br></br>
+            <p>Attractions List: {props.attractions.map(e => <Attraction {...e}/>)}</p>
             <form onSubmit={handleSubmit}>
                 <label>Attractions: </label><br></br>
                 <textarea onChange={handleChange} value={attraction} placeholder="Add an attraction..."
@@ -42,7 +57,8 @@ function SavedPark(props) {
                 <textarea ></textarea><br></br> */}
                 <input type="submit"></input>
             </form>
-            <p>Attractions List: <em>{props.attr}</em></p>
+            <button onClick={handleClick}
+            >Remove from SavedParks</button>
             
         </div>
     );

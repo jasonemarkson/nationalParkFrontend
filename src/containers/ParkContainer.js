@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchParks } from '../actions/ParksActions'
-// import { addToSavedParks } from '../actions/SavedParksActions'
 import ParksList from '../components/ParksList'
 
 class ParkContainer extends Component {

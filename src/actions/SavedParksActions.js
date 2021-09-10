@@ -28,14 +28,3 @@ export const fetchSavedParks = () => {
     )
 
 }
-
-export const addAttractionsToSavedParks = () => {
-    return (dispatch) => (
-        fetch('http://localhost:3000/saved_parks')
-        .then(response => response.json())
-        .then(savedparks => 
-            dispatch({type: 'ADD_ATTRACTIONS_TO_SAVED_PARKS', payload: savedparks})
-        )
-    )
-
-}
