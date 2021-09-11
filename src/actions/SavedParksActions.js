@@ -13,7 +13,7 @@ export const addToSavedParks = (parkId) => {
         })
         .then(response => response.json())
         .then(data => 
-            dispatch({ type: 'ADD_TO_SAVED' , payload: data.park})
+            dispatch({ type: 'ADD_TO_SAVED' , payload: data})
         )
     }
 }

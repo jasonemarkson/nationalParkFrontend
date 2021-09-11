@@ -48,13 +48,11 @@ function SavedPark(props) {
             <p>State(s): {props.states}</p>
             <p>{props.description}</p>
             <img src={props.images[0].url} alt={props.images[0].title} max-width={100} height={400} /><br></br>
-            <p>Attractions List: {props.attractions.map(e => <Attraction {...e}/>)}</p>
+            <p>Attractions List: {props.attractions.map((e, index) => <Attraction key={index} {...e}/>)}</p>
             <form onSubmit={handleSubmit}>
                 <label>Attractions: </label><br></br>
                 <textarea onChange={handleChange} value={attraction} placeholder="Add an attraction..."
                 ></textarea><br></br>
-                {/* <label>Notes: </label><br></br>
-                <textarea ></textarea><br></br> */}
                 <input type="submit"></input>
             </form>
             <button onClick={handleClick}
