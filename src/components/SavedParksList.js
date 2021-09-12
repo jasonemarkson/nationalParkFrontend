@@ -11,7 +11,6 @@ class SavedParksList extends Component {
         
         return (
             <div>
-                <p>SavedParksList is here</p>
                 {savedParks.map((s, index) => <SavedPark key={index} savedParkId={s.id} {...s.park} attractions={s.attractions}/>)}
             </div>
         );
