@@ -12,7 +12,7 @@ class SavedParksContainer extends Component {
 
     render() {
         return (
-            <div id="saved-park">
+            <div id="saved-parks-container">
                 <h1>These are your SavedParks</h1>
                 <SavedParksList />
             </div>

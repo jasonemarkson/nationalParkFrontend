@@ -1,0 +1,29 @@
+
+
+h1{
+    background-image: url("https://www.nps.gov/common/uploads/structured_data/2595FA12-DF7A-1B6C-55D8F41ABCA2E011.jpg"); 
+    text-align: center;
+}
+
+#home{
+    text-align: center;
+    background-size: cover;
+}
+
+#parks-container{
+    text-align: center;
+}
+
+#saved-parks-container{
+    text-align: center;
+}
+
+#park{
+    border: solid;
+    background-color: rgba(154, 249, 216, 0.988); 
+}
+
+#saved-park{
+    border: solid;
+    background-color: rgba(154, 200, 249, 0.988);
+}

@@ -11,7 +11,7 @@ class ParkContainer extends Component {
     
     render() {
         return (
-            <div>
+            <div id="parks-container">
                 <h1>Explore Across the USA, One Park at a Time</h1>
                 <ParksList />
 

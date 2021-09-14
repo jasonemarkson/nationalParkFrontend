@@ -43,7 +43,7 @@ function SavedPark(props) {
     }
 
     return (
-        <div>
+        <div id="saved-park">
             <h2>{props.fullName}</h2>
             <p>State(s): {props.states}</p>
             <p>{props.description}</p>
