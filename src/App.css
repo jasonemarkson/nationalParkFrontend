@@ -32,3 +32,8 @@ h1{
 #navbar{
     text-align: center;
 }
+
+#error{
+    color: red;
+    padding-block: 100px;
+}

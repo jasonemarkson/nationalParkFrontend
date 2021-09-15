@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Park from './Park'
+import { MoonLoader } from 'react-spinners'
 
 
 class ParksList extends Component {  
@@ -41,7 +42,8 @@ class ParksList extends Component {
                 }
                 
                 {/* 4) finally we call the method in the render() which returns an array and then we map over that array and create a Park component for each element which will display to our DOM */}
-                {this.renderParks().map((park, key) => <Park key={park.id} {...park} />)}
+                
+                {(this.props.parks.length > 0) ? this.renderParks().map((park, key) => <Park key={park.id} {...park} />) : <MoonLoader />}
             </div>
         )
     }
